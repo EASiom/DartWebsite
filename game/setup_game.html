@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dart</title>
+
+    <link rel="icon" href="../assets/main_page/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="../css/setup_game.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind.config.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+        href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+        rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".players_select_menu").select2();
+      });
+    </script>
+  </head>
+  <body class="text-center bg-background">
+    <div class="switch-container">
+      <label class="relative z-20 inline-block w-3/5 h-64 switch">
+        <input type="checkbox" />
+        <span class="absolute top-0 bottom-0 left-0 right-0 mt-3% cursor-pointer slider bg-second rounded-2xl">
+          <span class="absolute z-10 -translate-y-1/2 text-text text-8xl top-1/2 left-18% switch-text" id="slider_text_301">301</span>
+          <span class="absolute z-10 -translate-y-1/2 text-text text-8xl top-1/2 right-18% switch-text" id="slider_text_501">501</span>
+        </span>
+      </label>
+    </div>
+
+    <div class="relative w-3/5 mt-6 min-h-32 m-0/auto bg-second rounded-2xl player_select">
+      <div class="absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center h-12 text-4xl player_select_text text-text">
+        <p style="margin: 0">
+          <b style="margin: 0">
+            <u style="margin: 0"> PLAYERS </u>
+          </b>
+        </p>
+      </div>
+      <button class="absolute text-5xl cursor-pointer h-12 w-12 border-transparent z-20 rounded-xl top-2.5 right-4 bg-transparent transition duration-300 ease-in-out" id="shuffleButton" onclick="shuffleToggle()">
+        <i class="fa-solid fa-shuffle absolute text-4xl z-20 top-1.5 right-1.5 text-shuffle-btn-active transition duration-500 ease-in-out" id="shuffle"></i>
+      </button>
+      <div class="absolute z-20 w-full h-auto text-2xl -translate-x-1/2 select-btn bottom-2.5 bg-second rounded-e2xl text-second left-1/2 min-h-16">
+        <select
+          class="w-6/12 players_select_menu"
+          name="states[]"
+          multiple="multiple"
+          id="select_field"
+          data-maximum-selection-length="4"
+          data-close-on-select="false"
+        ></select>
+      </div>
+    </div>
+
+    <div class="absolute w-3/5 bottom-3% min-h-32 rounded-3xl -translate-x-1/2 m-0/auto bg-second left-1/2 start_game">
+      <button class="relative w-full transition duration-300 ease-in-out min-h-32 text-text rounded-3xl text-7xl hover:bg-second-hover start_game_btn " id="start_game_btn">START GAME</button>
+    </div>
+
+    <script src="../js/setup_game.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2d88e23ac6.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

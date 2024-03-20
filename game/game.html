@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dart</title>
+
+    <link rel="icon" href="../assets/main_page/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="../css/game.css"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind.config.js"></script>
+  </head>
+  <body class="bg-background">
+    <div
+      class="fixed top-0 left-0 z-0 w-full h-full transition duration-300 ease-in-out background"
+      id="background"
+      onclick="closeOptions()"
+    >
+      <div id="players" class="overflow-y-scroll max-h-60vh"></div>
+
+      <div
+        class="text-5xl text-center PointsBG text-second bg-second rounded-xl p-1.5 m-15/5"
+      >
+        <div id="buttons"></div>
+
+        <div><button
+          class="h-pointButton w-pointButton text-5xl disabled:bg-fourth text-text bg-third m-2.5 rounded-2xl PointsButton hover:bg-third-hover transition duration-300 ease-in-out"
+          onclick="updateScore(0)"
+        >
+          0
+        </button>
+
+        <button
+          id="doubleButton"
+          class="w-48 text-5xl transition duration-300 ease-in-out h-pointButton text-text bg-third m-10/0 rounded-xl disabled:bg-fourth ActionButton hover:bg-third-hover"
+        >
+          Double
+        </button>
+        <button
+          id="backButton"
+          class="w-48 text-5xl transition duration-300 ease-in-out h-pointButton disabled:bg-fourth text-text bg-third m-10/0 rounded-xl ActionButton hover:bg-third-hover"
+          onclick="backButton()"
+        >
+          Back
+        </button>
+        <button
+          id="tripleButton"
+          class="w-48 text-5xl transition duration-300 ease-in-out h-pointButton disabled:bg-fourth text-text bg-third m-10/0 rounded-xl ActionButton hover:bg-third-hover"
+        >
+          Triple
+        </button>
+
+        <button
+          id="25"
+          class="h-pointButton w-pointButton text-5xl text-text bg-third m-2.5 rounded-2xl PointsButton hover:bg-third-hover transition duration-300 ease-in-out disabled:bg-fourth"
+          onclick="updateScore(25)"
+        >
+          25
+        </button>
+
+        <button
+          id="options"
+          class="float-right w-24 h-24 mt-3 bg-transparent border-transparent right-1 text-third text-7xl"
+          onclick="optionMenu()"
+          style="position: absolute;"
+        >
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+
+        
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="popupWindow popup" id="popupFront">
+        <h1 class="mb-8 text-6xl text-text mx-1.25 popupText" id="winText">
+          wins!
+        </h1>
+        <button
+          onclick="continueGame()"
+          class="w-11/12 my-3 text-5xl transition duration-300 ease-in-out border-transparent disabled:bg-fourth rounded-xl bg-third text-text h-1/4 popupButton hover:bg-third-hover"
+          id="winContinue"
+        >
+          Continue
+        </button>
+        <button 
+          onclick="playerWins()" 
+          class="w-11/12 my-3 text-5xl transition duration-300 ease-in-out border-transparent disabled:bg-fourth rounded-xl bg-third text-text h-1/4 popupButton hover:bg-third-hover" 
+          id="winEnd"
+        >
+          End Game
+        </button>
+      </div>
+
+      <div class="!h-4/6 popupWindow popup" id="optionsPopup">
+        <h1 class="mb-8 text-6xl text-text mx-1.25 popupText">OPTIONS</h1>
+        <button
+          class="w-11/12 disabled:bg-fourth my-3 text-5xl transition duration-300 ease-in-out popupButton bg-third text-text h-12% rounded-xl hover:bg-third-hover"
+          onclick="window.location.href ='../'"
+        >
+          Home
+        </button>
+        <button
+          class="w-11/12 disabled:bg-fourth my-3 text-5xl transition duration-300 ease-in-out popupButton bg-third text-text h-12% rounded-xl hover:bg-third-hover"
+          onclick="window.location.href ='../game/setup_game.html'"
+        >
+          New Game
+        </button>
+        <button
+          class="w-11/12 disabled:bg-fourth my-3 text-5xl transition duration-300 ease-in-out popupButton bg-third text-text h-12% rounded-xl hover:bg-third-hover"
+          onclick="alert('Not implemented yet')"
+          disabled="true"
+        >
+          Save Game
+        </button>
+        <button 
+          class="w-11/12 disabled:bg-fourth my-3 text-5xl transition duration-300 ease-in-out popupButton bg-third text-text h-12% rounded-xl hover:bg-third-hover" 
+          onclick="window.location.href = ''"
+        >
+          Restart Game
+        </button>
+        <button 
+          class="w-11/12 disabled:bg-fourth my-3 text-5xl transition duration-300 ease-in-out popupButton bg-third text-text h-12% rounded-xl hover:bg-third-hover" 
+          onclick="playerWins()"
+        >
+          End Game
+        </button>
+      </div>
+    </div>
+
+    <script src="../js/game_html/generate.js"></script>
+    <script src="../js/game_html/mechanics.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2d88e23ac6.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

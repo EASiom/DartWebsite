@@ -1,0 +1,69 @@
+Backend API:
+
+	Spieler erstellen
+		POST
+		Request: ID, Name, (E-Mail, Passwort)
+		Response: None/Successfull
+	Spieler löschen
+		DELETE
+		Request: ID, (Passwort)
+		Response: None/Successfull
+	Spieler ändern/aktualisieren
+		POST
+		Request: ID, Name
+		Response: None/Successfull
+	Existierende Spieler abrufen (Name & ID)
+		GET
+		Request: None
+		Response: List of all players
+	ID zu Namen
+		GET
+		Request: ID
+		Response: Name
+	Spieler Stats abfragen
+		GET
+		Request: ID
+		Response: Stats
+	All Stats abfragen
+		GET
+		Request: None
+		Response: Map of Players with Stats
+	Stats ändern/aktualisieren
+		POST
+		Request: ID, Stats
+		Response: None/Successfull
+	
+	Eventuell:
+		Spiel speichern
+			Request: Aktuellen Spielstand
+			Response: None/Successfull
+		Spiel abfragen
+			Request: None
+			Response: List of all games
+		Spiel ändern/aktualisieren
+			Request: SpielID, Spielstand
+			Response: None/Successfull
+		Spiel löschen
+			Request: SpielID
+			Response: None/Successfull
+
+
+
+
+api.{domain}/...
+{domain}/api/...
+
+../stats/{userID}
+../user/{userID}
+../game/
+
+		
+Response as JSON
+
+
+GET
+DELETE
+POST
+
+
+-> Aufbau von Request & Antwort

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dart</title>
+
+    <link rel="icon" href="../assets/main_page/favicon.ico" type="image/x-icon" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind.config.js"></script>
+
+    <link href="../css/player.css" rel="stylesheet" />
+  </head>
+  <body class="bg-background">
+    <div
+      class="background !top-1 fixed w-full h-full"
+      onclick="closeOptions()"
+      id="background"
+    >
+      <button
+        class="h-10 my-4 ml-4 text-2xl font-semibold transition duration-300 ease-in-out rounded-lg w-44 text-text bg-accent hover:bg-accent-hover"
+        id="createPlayer"
+        onclick="newPlayer()"
+      >
+        New User
+      </button>
+
+      <button
+        id="home"
+        class="float-right w-16 h-16 mt-1 text-4xl transition duration-300 ease-in-out bg-transparent border-transparent text-third hover:text-third-hover"
+        onclick="window.location.href = '../'"
+      >
+        <i class="fa-solid fa-house"></i>
+      </button>
+
+      <input
+        class="float-right h-10 my-4 mr-4 text-2xl font-semibold transition duration-300 ease-in-out border-4 rounded-lg outline-none caret-accent-hover w-44 text-accent-hover bg-third hover:bg-third-hover border-third hover:border-third-hover"
+        id="search"
+        type="text"
+        placeholder="Search"
+        oninput="searchPlayer()"
+      />
+
+      <div class="overflow-y-scroll h-92vh">
+        <table class="w-full table-fixed">
+          <thead class="pb-1">
+            <tr class="!border-b-4 !border-second">
+              <th class="text-3xl font-semibold text-text w-3/10">Name</th>
+              <th class="text-3xl font-semibold text-text">User-ID</th>
+              <th class="text-3xl font-semibold text-text">Stats</th>
+            </tr>
+          </thead>
+          <tbody id="playerTable" class="pl-4">
+            <tr class="h-4">
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="popupWindow popup" id="newPlayerPopup">
+        <div class="h-60 rounded-xl popupContent bg-third">
+          <div class="popupHeader">
+            <h1 class="mb-4 text-6xl text-text mx-1.25 popupText">
+              New Player
+            </h1>
+          </div>
+          <div class="popupBody">
+            <input
+              class="w-11/12 disabled:bg-fourth my-3 text-5xl text-center transition duration-300 ease-in-out popupButton bg-fourth text-text h-12% rounded-xl hover:bg-fourth-hover"
+              id="playerName"
+              type="text"
+              placeholder="Name"
+            />
+            <button
+              class="w-5/12 disabled:bg-fourth text-5xl text-text bg-accent hover:bg-accent-hover rounded-xl font-semibold my-1 transition duration-300 ease-in-out h-12%"
+              onclick="createPlayer()"
+            >
+              Create
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="popupWindow popup" id="managePlayerPopup">
+        <div class="h-80 rounded-xl popupContent bg-third">
+          <div class="popupHeader">
+            <h1
+              class="mb-4 text-5xl text-text mx-1.25 popupText"
+              id="managePlayerTitle"
+            >
+              Manage Player
+            </h1>
+          </div>
+          <div class="popupBody">
+            <input
+              class="w-11/12 disabled:bg-fourth my-3 text-5xl text-center transition duration-300 ease-in-out popupButton bg-fourth text-text h-12% rounded-xl hover:bg-fourth-hover"
+              id="playerNameManage"
+              type="text"
+              placeholder="Name"
+            />
+            <input
+              class="w-11/12 disabled:bg-third-hover mb-3 text-5xl text-center transition duration-300 ease-in-out popupButton bg-fourth text-text h-12% rounded-xl hover:bg-fourth-hover"
+              id="playerIDManage"
+              type="number"
+              placeholder="ID"
+              disabled
+            />
+            <button
+              class="w-5/12 mr-4 disabled:bg-fourth text-5xl text-text bg-accent hover:bg-accent-hover rounded-xl font-semibold my-1 transition duration-300 ease-in-out h-12%"
+              onclick="saveChanges2Player()"
+            >
+              Save
+            </button>
+
+            <button
+              class="w-5/12 ml-4 disabled:bg-fourth text-5xl text-text bg-accent hover:bg-accent-hover rounded-xl font-semibold my-1 transition duration-300 ease-in-out h-12%"
+              onclick="deletePlayer()"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/player.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2d88e23ac6.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
