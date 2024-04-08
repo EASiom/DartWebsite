@@ -1,71 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dart</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Dart</title>
+  <link rel="icon" href="../assets/main_page/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+</head>
+<body class="bg-background">
+  <div id="gold" class="w-4/12 h-auto mx-auto my-0 medal">
+    <div class="relative mt-5% flex items-center justify-center w-full rounded-3xl h-36 bg-second nameBox" id="gold_nameBox"></div>
+    <img src="../assets/win_screen/gold_medal.png" alt="win" class="object-cover m-auto medalpng" style="object-position: 100% -5px">
+  </div>
 
-    <link rel="icon" href="../assets/main_page/favicon.ico" type="image/x-icon" />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../js/tailwind.config.js"></script>
-  </head>
-  <body class="bg-background">
-    <div id="gold " class="w-4/12 h-auto mx-auto my-0 medal">
-      <div
-        class="relative mt-5% flex items-center justify-center w-full rounded-3xl h-36 bg-second nameBox"
-        id="gold_nameBox"
-      ></div>
-      <img
-        src="../assets/win_screen/gold_medal.png"
-        alt="win"
-        class="object-cover m-auto medalpng"
-        style="object-position: 100% -5px"
-      />
+  <div style="display: flex">
+    <div id="silver" class="w-4/12 h-auto mx-auto my-0 medal">
+      <div class="relative mt-5% flex items-center justify-center w-full rounded-3xl h-36 bg-second nameBox" id="silver_nameBox"></div>
+      <img src="../assets/win_screen/silver_medal.png" alt="win" class="object-cover m-auto medalpng" style="object-position: 100% -5px">
     </div>
 
-    <div style="display: flex">
-      <div id="silver" class="w-4/12 h-auto mx-auto my-0 medal">
-        <div
-          class="relative mt-5% flex items-center justify-center w-full rounded-3xl h-36 bg-second nameBox"
-          id="silver_nameBox"
-        ></div>
-        <img
-          src="../assets/win_screen/silver_medal.png"
-          alt="win"
-          class="object-cover m-auto medalpng"
-          style="object-position: 100% -5px"
-        />
-      </div>
-
-      <div id="bronce" class="w-4/12 h-auto mx-auto my-0 medal">
-        <div
-          class="relative mt-5% flex items-center justify-center w-full rounded-3xl h-36 bg-second nameBox"
-          id="bronce_nameBox"
-        ></div>
-        <img
-          src="../assets/win_screen/bronce_medal.png"
-          alt="win"
-          class="object-cover m-auto medalpng"
-          style="object-position: 100% -5px"
-        />
-      </div>
+    <div id="bronce" class="w-4/12 h-auto mx-auto my-0 medal">
+      <div class="relative mt-5% flex items-center justify-center w-full rounded-3xl h-36 bg-second nameBox" id="bronce_nameBox"></div>
+      <img src="../assets/win_screen/bronce_medal.png" alt="win" class="object-cover m-auto medalpng" style="object-position: 100% -5px">
     </div>
+  </div>
 
-    <div id="others"></div>
+  <div id="others"></div>
 
-    <div
-      id="home"
-      class="flex h-20 m-auto text-5xl text-center transition duration-300 ease-in-out rounded-3xl w-1/10 bg-second text-text hover:bg-second-hover"
-    >
-      <a
-        href="../index.html"
-        id="href_home"
-        class="w-full h-full no-underline text-text"
-      >
-        <p id="text_home" class="m-3">HOME</p>
-      </a>
-    </div>
+  <div id="home" class="flex h-20 m-auto text-5xl text-center transition duration-300 ease-in-out rounded-3xl w-1/10 bg-second text-text hover:bg-second-hover">
+    <a href="../index.html" id="href_home" class="w-full h-full no-underline text-text">
+      <p id="text_home" class="m-3">HOME</p>
+    </a>
+  </div>
 
-    <script src="../js/win.js"></script>
-  </body>
+  <script src="../js/win.js"></script>
+</body>
 </html>

@@ -147,4 +147,6 @@ function generatePlayer(playerName, id) {
     player.appendChild(dartsStats);
 
     document.getElementById('players').appendChild(player);
+
+    
 }
